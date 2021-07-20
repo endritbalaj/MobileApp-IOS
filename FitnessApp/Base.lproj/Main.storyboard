@@ -18,23 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-nd-pHf">
-                                <rect key="frame" x="152" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEY-pm-2BX">
+                                <rect key="frame" x="20" y="558" width="335" height="89"/>
+                                <state key="normal" title="GO IN SECOND PAGE"/>
                                 <connections>
-                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p1B-EW-YB1"/>
+                                    <segue destination="BYR-DZ-FE0" kind="presentation" modalTransitionStyle="crossDissolve" id="mXE-a0-Gpz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello world" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVg-R7-UKm">
-                                <rect key="frame" x="132" y="141" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-xe-z1l">
+                                <rect key="frame" x="144" y="268.5" width="86" height="129"/>
+                                <state key="normal" title="Change Text"/>
+                                <connections>
+                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rre-gh-DBp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello world" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVg-R7-UKm">
+                                <rect key="frame" x="20" y="114" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vVg-R7-UKm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0l8-De-KjQ"/>
+                            <constraint firstItem="8I5-xe-z1l" firstAttribute="top" secondItem="vVg-R7-UKm" secondAttribute="bottom" constant="128" id="3NG-XO-Ewu"/>
+                            <constraint firstItem="8I5-xe-z1l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QG9-hh-Yh8"/>
+                            <constraint firstItem="HEY-pm-2BX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="X74-3I-EU6"/>
+                            <constraint firstItem="8I5-xe-z1l" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="alB-o3-jLV"/>
+                            <constraint firstItem="HEY-pm-2BX" firstAttribute="top" secondItem="8I5-xe-z1l" secondAttribute="bottom" constant="160" id="bnP-kX-dOv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HEY-pm-2BX" secondAttribute="bottom" constant="20" id="jXk-MU-gMH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vVg-R7-UKm" secondAttribute="trailing" constant="20" id="lTl-vd-96c"/>
+                            <constraint firstItem="vVg-R7-UKm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="pyC-Ft-ugt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HEY-pm-2BX" secondAttribute="trailing" constant="20" id="yw2-yP-vKZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -44,6 +61,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="37.331334332833585"/>
+        </scene>
+        <!--Second Page-->
+        <scene sceneID="z51-gn-HTK">
+            <objects>
+                <viewController id="BYR-DZ-FE0" customClass="SecondPage" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KI5-iM-Gdc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdX-Cu-r6X">
+                                <rect key="frame" x="153.5" y="318.5" width="66" height="30"/>
+                                <state key="normal" title="GO BACK"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="Keo-P5-oeB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88056395651326735" green="1" blue="0.33080343597063344" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qdX-Cu-r6X" firstAttribute="centerY" secondItem="KI5-iM-Gdc" secondAttribute="centerY" id="NqE-Jx-w2T"/>
+                            <constraint firstItem="qdX-Cu-r6X" firstAttribute="centerX" secondItem="KI5-iM-Gdc" secondAttribute="centerX" id="m7t-t9-vco"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qTF-Gp-Gwq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q92-Cu-7l5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="706" y="37"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8BB734F26A6FD0F007E7E60 /* SecondPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BB734E26A6FD0F007E7E60 /* SecondPage.swift */; };
 		E8F8C87126A48032008C0621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8C87026A48032008C0621 /* AppDelegate.swift */; };
 		E8F8C87326A48032008C0621 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8C87226A48032008C0621 /* ViewController.swift */; };
 		E8F8C87626A48032008C0621 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F8C87426A48032008C0621 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8BB734E26A6FD0F007E7E60 /* SecondPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPage.swift; sourceTree = "<group>"; };
 		E8F8C86D26A48032008C0621 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F8C87026A48032008C0621 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F8C87226A48032008C0621 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				E8F8C87026A48032008C0621 /* AppDelegate.swift */,
 				E8F8C87226A48032008C0621 /* ViewController.swift */,
 				E8F8C87426A48032008C0621 /* Main.storyboard */,
+				E8BB734E26A6FD0F007E7E60 /* SecondPage.swift */,
 				E8F8C87726A48032008C0621 /* Assets.xcassets */,
 				E8F8C87926A48032008C0621 /* LaunchScreen.storyboard */,
 				E8F8C87C26A48032008C0621 /* Info.plist */,
@@ -138,6 +141,7 @@
 			files = (
 				E8F8C87326A48032008C0621 /* ViewController.swift in Sources */,
 				E8F8C87126A48032008C0621 /* AppDelegate.swift in Sources */,
+				E8BB734F26A6FD0F007E7E60 /* SecondPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
