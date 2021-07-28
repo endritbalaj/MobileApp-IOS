@@ -62,14 +62,54 @@ class ViewController: UIViewController {
         if sqlite3_bind_int(stmt, 3, (age! as NSString).intValue) != SQLITE_OK
         {
             print("Errors binding age")
-            
         }
+        
         if sqlite3_step(stmt) == SQLITE_DONE
         {
             print("SUCCESSFULLY")
         }
         
     }
+    
+    @IBAction func View(_ sender: Any) {
+        var selectStmt: OpaquePointer?
+        let selectquery = "select * from test1"
+        
+        if sqlite3_prepare(db, selectquery, -1, &selectStmt, nil) == SQLITE_OK
+        {
+            while sqlite3_step(selectStmt) == SQLITE_ROW
+            {
+                let rowID = sqlite3_column_int(selectStmt, 0)
+                
+                let rowName = sqlite3_column_text(selectStmt, 1)
+                
+                let rowSurname = sqlite3_column_text(selectStmt, 2)
+                
+                let rowAge = sqlite3_column_int(selectStmt, 3)
+                
+                let rowNameString = String(cString: rowName!)
+                let rowSurnameString = String(cString: rowSurname!)
+                
+                print("\(rowID) \(rowNameString) \(rowSurnameString) \(rowAge)")
+            }
+        }
+        
+    }
+    @IBAction func deleterows(_ sender: Any) {
+        var deleteStmt: OpaquePointer?
+        let deletequery = "delete from test1"
+        
+        if sqlite3_prepare(db, deletequery, -1, &deleteStmt, nil) != SQLITE_OK
+        {
+            print("Errors delete query")
+        }
+        if sqlite3_step(deleteStmt) == SQLITE_DONE
+        {
+            print("SUCCESSFULLY deleted")
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let fileURL = try! FileManager.default
