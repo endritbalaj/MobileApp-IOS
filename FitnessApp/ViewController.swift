@@ -13,26 +13,21 @@ class ViewController: UIViewController {
 
     var db: OpaquePointer?
     
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var fullnameTextField: UITextField!
     
-    @IBOutlet weak var surnameTextField: UITextField!
     
     @IBOutlet weak var ageTextField: UITextField!
     
     @IBOutlet weak var label: UILabel!
     
     @IBAction func button(_ sender: Any) {
-        let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if(name?.isEmpty)!{
+        let fullname = fullnameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        print("\(fullname)")
+        if(fullname?.isEmpty)!{
             print("Name is empty")
             return;
         }
         
-        let surname = surnameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if(surname?.isEmpty)!{
-            print("Surname is empty")
-            return;
-        }
         
         let age = ageTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if(age?.isEmpty)!{
@@ -41,25 +36,21 @@ class ViewController: UIViewController {
         }
         
         var stmt: OpaquePointer?
-        let insertquery = "INSERT INTO test1 (name, surname, age) VALUES (?, ?, ?)"
+        let insertquery = "INSERT INTO test2 (fullname, age) VALUES (?, ?)"
         
         if sqlite3_prepare(db, insertquery, -1, &stmt, nil) != SQLITE_OK
         {
             print("Errors binding query")
         }
-        if sqlite3_bind_text(stmt, 1, name, -1, nil) != SQLITE_OK
-        {
-            print("Errors binding name")
-            
-        }
+       
     
-        if sqlite3_bind_text(stmt, 2, surname, -1, nil) != SQLITE_OK
+        if sqlite3_bind_text(stmt, 1, fullname, -1, nil) != SQLITE_OK
         {
-            print("Errors binding surname")
+            print("Errors binding fullname")
             
         }
         
-        if sqlite3_bind_int(stmt, 3, (age! as NSString).intValue) != SQLITE_OK
+        if sqlite3_bind_int(stmt, 2, (age! as NSString).intValue) != SQLITE_OK
         {
             print("Errors binding age")
         }
@@ -68,12 +59,18 @@ class ViewController: UIViewController {
         {
             print("SUCCESSFULLY")
         }
+        if sqlite3_finalize(stmt) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error finalizing prepared statement: \(errmsg)")
+        }
+        
+        stmt = nil
         
     }
     
     @IBAction func View(_ sender: Any) {
         var selectStmt: OpaquePointer?
-        let selectquery = "select * from test1"
+        let selectquery = "select * from test2"
         
         if sqlite3_prepare(db, selectquery, -1, &selectStmt, nil) == SQLITE_OK
         {
@@ -83,21 +80,18 @@ class ViewController: UIViewController {
                 
                 let rowName = sqlite3_column_text(selectStmt, 1)
                 
-                let rowSurname = sqlite3_column_text(selectStmt, 2)
-                
-                let rowAge = sqlite3_column_int(selectStmt, 3)
+                let rowAge = sqlite3_column_int(selectStmt, 2)
                 
                 let rowNameString = String(cString: rowName!)
-                let rowSurnameString = String(cString: rowSurname!)
                 
-                print("\(rowID) \(rowNameString) \(rowSurnameString) \(rowAge)")
+                print("\(rowID) \(rowNameString) \(rowAge)")
             }
         }
         
     }
     @IBAction func deleterows(_ sender: Any) {
         var deleteStmt: OpaquePointer?
-        let deletequery = "delete from test1"
+        let deletequery = "delete from test2"
         
         if sqlite3_prepare(db, deletequery, -1, &deleteStmt, nil) != SQLITE_OK
         {
@@ -114,7 +108,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let fileURL = try! FileManager.default
             .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            .appendingPathComponent("test1.sqlite")
+            .appendingPathComponent("test2.sqlite")
         
         // open database
         
@@ -126,7 +120,7 @@ class ViewController: UIViewController {
             return
         }
         
-        if sqlite3_exec(db, "create table if not exists test1 (id integer primary key autoincrement, name text, surname text, age integer)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(db, "create table if not exists test2 (id integer primary key autoincrement, fullname text, age integer)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }
