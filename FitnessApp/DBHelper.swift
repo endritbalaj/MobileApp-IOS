@@ -9,8 +9,8 @@
 import UIKit
 import SQLite3
 
-class DBHelper {
-    
+public class DBHelper {
+
     init()
     {
         db = openDatabase()
@@ -81,9 +81,43 @@ class DBHelper {
         
     }
     
+    func read() -> [People] {
+        let queryStatementString = "select id, fullname, age from test2"
+        var queryStatement: OpaquePointer? = nil
+        var psns : [People] = []
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                let id = sqlite3_column_int(queryStatement, 0)
+                let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                let age = sqlite3_column_int(queryStatement, 2)
+                
+                psns.append(People(id: Int(id), name: name), age: Int(age)) 
+                print("Query Result:")
+                print("\(id) | \(name) \(age)")
+            }
+        } else {
+            print("SELECT statement could not be prepared")
+        }
+        sqlite3_finalize(queryStatement)
+        return psns
+    }
+    
     func deleteRecord()
     {
+        var deleteStmt: OpaquePointer?
+        let deletequery = "delete from test2"
+        
+        if sqlite3_prepare(db, deletequery, -1, &deleteStmt, nil) != SQLITE_OK
+        {
+            print("Errors delete query")
+        }
+        if sqlite3_step(deleteStmt) == SQLITE_DONE
+        {
+            print("SUCCESSFULLY deleted")
+        }
         
     }
+    
+    
 
 }

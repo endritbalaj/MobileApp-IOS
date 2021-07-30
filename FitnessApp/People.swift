@@ -8,7 +8,7 @@
 
 import Foundation
 
-class People: <#super class#> {
+public class People {
     var id: Int = 0
     var fullname: String = ""
     var age: Int = 0
