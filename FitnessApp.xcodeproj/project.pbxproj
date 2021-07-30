@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E86C1E3026B4144300F512DE /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86C1E2F26B4144300F512DE /* DBHelper.swift */; };
+		E86C1E3226B4193500F512DE /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86C1E3126B4193500F512DE /* People.swift */; };
 		E8BB734F26A6FD0F007E7E60 /* SecondPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BB734E26A6FD0F007E7E60 /* SecondPage.swift */; };
 		E8F8C87126A48032008C0621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8C87026A48032008C0621 /* AppDelegate.swift */; };
 		E8F8C87326A48032008C0621 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8C87226A48032008C0621 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E86C1E2F26B4144300F512DE /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		E86C1E3126B4193500F512DE /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		E8BB734E26A6FD0F007E7E60 /* SecondPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPage.swift; sourceTree = "<group>"; };
 		E8F8C86D26A48032008C0621 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F8C87026A48032008C0621 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,9 +64,11 @@
 				E8F8C87226A48032008C0621 /* ViewController.swift */,
 				E8F8C87426A48032008C0621 /* Main.storyboard */,
 				E8BB734E26A6FD0F007E7E60 /* SecondPage.swift */,
+				E86C1E2F26B4144300F512DE /* DBHelper.swift */,
 				E8F8C87726A48032008C0621 /* Assets.xcassets */,
 				E8F8C87926A48032008C0621 /* LaunchScreen.storyboard */,
 				E8F8C87C26A48032008C0621 /* Info.plist */,
+				E86C1E3126B4193500F512DE /* People.swift */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -142,6 +148,8 @@
 				E8F8C87326A48032008C0621 /* ViewController.swift in Sources */,
 				E8F8C87126A48032008C0621 /* AppDelegate.swift in Sources */,
 				E8BB734F26A6FD0F007E7E60 /* SecondPage.swift in Sources */,
+				E86C1E3026B4144300F512DE /* DBHelper.swift in Sources */,
+				E86C1E3226B4193500F512DE /* People.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

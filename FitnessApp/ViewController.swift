@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     
     @IBAction func button(_ sender: Any) {
         let fullname = fullnameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        print("\(fullname)")
         if(fullname?.isEmpty)!{
             print("Name is empty")
             return;
