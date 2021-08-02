@@ -11,64 +11,44 @@ import SQLite3
 
 
 class SecondPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var db: OpaquePointer?
     
+    var people:[People] = []
+    var peopleid = 0
+    var db:DBHelper = DBHelper()
     
     @IBOutlet weak var table: UITableView!
-
+    
     @IBAction func showdata(_ sender: Any) {
-        var selectStmt: OpaquePointer?
-        let selectquery = "select * from test2"
         
-        if sqlite3_prepare(db, selectquery, -1, &selectStmt, nil) == SQLITE_OK
-        {
-            while sqlite3_step(selectStmt) == SQLITE_ROW
-            {
-                let rowID = sqlite3_column_int(selectStmt, 0)
-                
-                let rowName = sqlite3_column_text(selectStmt, 1)
-                
-                let rowAge = sqlite3_column_int(selectStmt, 2)
-                
-                let rowNameString = String(cString: rowName!)
-                
-                print("\(rowID) \(rowNameString) \(rowAge)")
-            }
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return people.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "ID: " + String(people[indexPath.row].id) + " , Name: " + people[indexPath.row].fullname + " , Age: " + String(people[indexPath.row].age)
+        return cell
     }
     
-    
-    func numberOfSections(in tableView: UITableView) -> Int{
-        
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete{
+            db.deleteRecord(id: people[indexPath.row].id)
+            people = db.read()
+            table.reloadData()
+        }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        peopleid = people[indexPath.row].id
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fileURL = try! FileManager.default
-            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            .appendingPathComponent("test2.sqlite")
-        
-        // open database
-        
-        
-        guard sqlite3_open(fileURL.path, &db) == SQLITE_OK else {
-            print("error opening database")
-            sqlite3_close(db)
-            db = nil
-            return
-        
-        }
-    
+        people = db.read()
+        self.table.reloadData()
         
         
     }
