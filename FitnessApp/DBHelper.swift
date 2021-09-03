@@ -91,7 +91,7 @@ public class DBHelper {
                 let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
                 let age = sqlite3_column_int(queryStatement, 2)
                 
-                psns.append(People(id: Int(id), name: name), age: Int(age)) 
+                psns.append(People(id: Int(id), fullname: name, age:Int(age)))
                 print("Query Result:")
                 print("\(id) | \(name) \(age)")
             }
@@ -102,22 +102,21 @@ public class DBHelper {
         return psns
     }
     
-    func deleteRecord()
-    {
-        var deleteStmt: OpaquePointer?
-        let deletequery = "delete from test2"
-        
-        if sqlite3_prepare(db, deletequery, -1, &deleteStmt, nil) != SQLITE_OK
-        {
-            print("Errors delete query")
+    func deleteRecord(id:Int) {
+        let deleteStatementStirng = "DELETE FROM test2 WHERE Id = ?;"
+        var deleteStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(deleteStatement, 1, Int32(id))
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("Successfully deleted row.")
+            } else {
+                print("Could not delete row.")
+            }
+        } else {
+            print("DELETE statement could not be prepared")
         }
-        if sqlite3_step(deleteStmt) == SQLITE_DONE
-        {
-            print("SUCCESSFULLY deleted")
-        }
-        
+        sqlite3_finalize(deleteStatement)
     }
-    
     
 
 }

@@ -13,7 +13,7 @@ public class People {
     var fullname: String = ""
     var age: Int = 0
     
-    init(Int id, String name, Int age) {
+    init(id: Int, fullname:String, age:Int) {
         self.id = id
         self.fullname = fullname
         self.age = age
