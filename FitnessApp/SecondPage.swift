@@ -20,6 +20,12 @@ class SecondPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func showdata(_ sender: Any) {
         
+        showAlert()
+        super.viewDidLoad()
+        people = db.read()
+        self.table.reloadData()
+        table.refreshControl = UIRefreshControl()
+        self.view.layoutIfNeeded()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,11 +43,34 @@ class SecondPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
             db.deleteRecord(id: people[indexPath.row].id)
             people = db.read()
             table.reloadData()
+            table.refreshControl = UIRefreshControl()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         peopleid = people[indexPath.row].id
+    }
+    
+    func showAlert(){
+        let alert = UIAlertController.init(title: "Erase all data!", message: "Data couldn't be back", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction.init(title: "Delete", style: .destructive, handler: {
+            action in
+            self.db.deleteAll()
+            print("All data is deleted")
+        }))
+      
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .default, handler: {
+            action in
+            print("Tapped Cancel")
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Dismiss", style: .cancel, handler: {
+            action in
+            print("Tapped Dismiss")
+        }))
+        
+        present(alert, animated: true)
     }
     
     override func viewDidLoad() {

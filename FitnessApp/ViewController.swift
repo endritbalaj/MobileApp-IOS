@@ -38,15 +38,6 @@ class ViewController: UIViewController {
         db.insertRecord(fullname: fullname!, age: ageInt!)
     }
     
-    @IBAction func View(_ sender: Any) {
-       
-        
-    }
-    @IBAction func deleterows(_ sender: Any) {
-        
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
      
