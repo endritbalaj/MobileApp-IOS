@@ -15,31 +15,32 @@ Ky aplikacion eshte ndertuar nga gjuha programuese Swift. <br />
 * [Instalimi](#instalimi)
 * [Te dhena shtese](#tedhenashtese)
 ## Hyrje
-Ky aplikacion eshte ndertuar per paisjet mobile me sistem operativ IOS. Ky aplikacion eshte nje aplikacion shume i thjesht i cili ka mundesi qe te zgjerohet ne te ardhmen me shume. Ne kete aplikacion mundemi te futim te dhena ne databaze dhe te fshijm ato. Gjithashtu mund te navigojme nga nje view tek tjetra. Screenshots jane marrur nga simulimi ne nje makine virtuale nje paisje mobile te llojit <strong>Iphone X</strong>.
+Ky aplikacion është ndërtuar për pajisjet mobile me sistem operativ IOS. Eshtë një aplikacion i thjeshtë i cili ka mundësi që të zgjerohet në të ardhmen. Në këtë aplikacion mundemi të ruajmë,lexojmë si dhe të fshijmë të dhënat në databazë. Gjithashtu mund të navigojmë nga një view tek tjetra. Screenshots janë bërë në simulimin me makinë virtuale, ku është përdorur një paisje mobile e llojit <strong>Iphone X</strong>.
 
 ## Funksionet
 Ky projekt permban keto funksione:
-* Shtimi i te dhenave ne databaze;
+* Shtimi i të dhënave në databazë;
+* Leximi i të dhënave nga databaza;
 * Fshirja e te dhenave nga databaza;
 
 ## Ilustrimi
-* Faqja e pare: Ne faqen e pare ne kemi mundesi qe te shtojme te dhenat dhe ti ruajm ato, kemi dy fusha: 1) Fusha "Full Name" 2) Fusha "Age" ku duhet te shenojme emrin dhe moshen, me posht kemi nje buton qe na mundeson ruajtjen e te dhenave ne databaze dhe krejt ne fund kemi edhe nje buton i cili na dergon tek faqja e dyte.
+* Faqja e parë: Në faqen e parë ne kemi mundësi që të plotësojmë të dhënat dhe ti ruajmë ato. Janë ofruar dy fusha për plotësim: 1) Fusha "Full Name" 2) Fusha "Age" ku duhet të shënojme emrin dhe moshën, poshtë tyre kemi një buton që na mundeson ruajtjen e të dhënave në databazë. Nëse të dhënat janë jo valide, ne kemi bërë edhe validimin e fushave, ku për secilën fushë printohet gabimi i cili ndodh. Në fund të faqes kemi vendosur edhe një buton i cili na shërben për të kaluar tek faqja e dytë, tek e cila mund ti shohim të dhënat e regjistruara.
 <p float="left" align="center">
 <img src="./Figures/1.png" alt="first_page" width="250" height="500">
 </p>
 
-* Te dhenat: Ne kete dritare ne kemi mundesi qe ti shohim te dhenat qe kemi futur ne databaze, ku gjithashtu ne mundemi me i fshi te gjitha te dhenat me butonin ne fund te dritares ose te i fshijm nje nga nje manualisht( swipe-left -> Delete) si ne figurat ne vazhdim.
+* Të dhënat: Në këtë dritare kemi mundësi që ti shohim të dhënat që kemi ruajtur në databazë, ku gjithashtu ofrohet mundësia e fshirjes së të gjitha të dhenave me butonin ne fund te dritares ose të fshihen një nga një manualisht( swipe-left -> Delete) si në figurat në vazhdim.
 <p float="left" align="center">
 <img src="./Figures/3.png" alt="delete_all" width="250" height="500">
 <img src="./Figures/4.png" alt="delete_one" width="250" height="500">
  </p>
 
 ## Instalimi
-Ky aplikacion duhet te klonohet apo te behet download dhe me pas te lidhet me nje lidhje fizike ndermjet PC dhe nje paisje mobile IOS qe te mund te instalohet ne telefon, ose mund edhe te simulohet virtualisht nga XCode.
+Ky aplikacion duhet të klonohet apo të bëhet download dhe më pas të lidhet me një lidhje fizike ndërmjet PC dhe një pajisje mobile IOS që të mund të instalohet në telefon, ose mund edhe te simulohet virtualisht nga XCode.
 
-## Te dhena shtese
-* Ky aplikacion eshte krijuar si projekt per vlersimin e studenteve qe kane punuar ne kete projekt ne lenden Paisje Mobile ne kuader te departmentit te Inxhinierise Kompjuterike(ne FIEK) ne Universitetin e Prishtines(Hasan Prishtina).
-* Te dhenat e zhvilluesve:
+## Të dhëna shtese
+* Ky aplikacion është krijuar si projekt për vlersimin e studentëve që kane punuar në kete projekt në lëndën Paisje Mobile në kuadër të departmentit të Inxhinierisë Kompjuterike(FIEK) në Universitetin e Prishtinës(Hasan Prishtina).
+* Të dhënat e zhvilluesve:
 <br>Elvir Misini:<br><img alt="GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> https://github.com/elvirmisini
 <br><img alt="Linkedin" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /> https://www.linkedin.com/in/elvir-misini-479547202/
 <br>Endrit Balaj:<br><img alt="GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> https://github.com/endritbalaj
