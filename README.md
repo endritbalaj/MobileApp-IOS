@@ -13,21 +13,28 @@ Ky aplikacion eshte ndertuar nga gjuha programuese Swift. <br />
 * [Funksionet](#funksionet)
 * [Ilustrimi](#ilustrimi)
 * [Instalimi](#instalimi)
-* [Te dhena shtese](#tedhenashtese)
+* [Të dhëna shtesë](#tedhenashtese)
+
 ## Hyrje
 Ky aplikacion është ndërtuar për pajisjet mobile me sistem operativ IOS. Eshtë një aplikacion i thjeshtë i cili ka mundësi që të zgjerohet në të ardhmen. Në këtë aplikacion mundemi të ruajmë,lexojmë si dhe të fshijmë të dhënat në databazë. Gjithashtu mund të navigojmë nga një view tek tjetra. Screenshots janë bërë në simulimin me makinë virtuale, ku është përdorur një paisje mobile e llojit <strong>Iphone X</strong>.
 
 ## Funksionet
-Ky projekt permban keto funksione:
+Ky projekt përmban këto funksione:
+* Krijimi i lidhjes me databazën;
+* Krijimi i modelit & klasës;
 * Shtimi i të dhënave në databazë;
+* Kalimi nga një view tek tjetra;
 * Leximi i të dhënave nga databaza;
+* Shfaqja e të dhënave përmes TableView;
 * Fshirja e te dhenave nga databaza;
+* Anulimi i kërkesës nga përdoruesi përmes Alert Dialog;
 
 ## Ilustrimi
 * Faqja e parë: Në faqen e parë ne kemi mundësi që të plotësojmë të dhënat dhe ti ruajmë ato. Janë ofruar dy fusha për plotësim: 1) Fusha "Full Name" 2) Fusha "Age" ku duhet të shënojme emrin dhe moshën, poshtë tyre kemi një buton që na mundeson ruajtjen e të dhënave në databazë. Nëse të dhënat janë jo valide, ne kemi bërë edhe validimin e fushave, ku për secilën fushë printohet gabimi i cili ndodh. Në fund të faqes kemi vendosur edhe një buton i cili na shërben për të kaluar tek faqja e dytë, tek e cila mund ti shohim të dhënat e regjistruara.
 <p float="left" align="center">
-<img src="./Figures/1.png" alt="first_page" width="250" height="500">
-</p>
+<img src="./Figures/1.png" alt="delete_all" width="250" height="500">
+<img src="./Figures/2.png" alt="delete_one" width="250" height="500">
+ </p>
 
 * Të dhënat: Në këtë dritare kemi mundësi që ti shohim të dhënat që kemi ruajtur në databazë, ku gjithashtu ofrohet mundësia e fshirjes së të gjitha të dhenave me butonin ne fund te dritares ose të fshihen një nga një manualisht( swipe-left -> Delete) si në figurat në vazhdim.
 <p float="left" align="center">
@@ -35,10 +42,16 @@ Ky projekt permban keto funksione:
 <img src="./Figures/4.png" alt="delete_one" width="250" height="500">
  </p>
 
+* Përdorimi i Alert Dialog: Na mundëson që ti ofrojmë përdoruesit mundësinë që të mos e kryej një veprim të caktuar menjëherë pasi klikon butonin, për arsye se nganjëherë mund të fshihen të dhëna sensitive. 
+
+<p float="left" align="center">
+<img src="./Figures/5.png" alt="delete_all" width="250" height="500">
+</p>
+
 ## Instalimi
 Ky aplikacion duhet të klonohet apo të bëhet download dhe më pas të lidhet me një lidhje fizike ndërmjet PC dhe një pajisje mobile IOS që të mund të instalohet në telefon, ose mund edhe te simulohet virtualisht nga XCode.
 
-## Të dhëna shtese
+## Të dhëna shtesë
 * Ky aplikacion është krijuar si projekt për vlersimin e studentëve që kane punuar në kete projekt në lëndën Paisje Mobile në kuadër të departmentit të Inxhinierisë Kompjuterike(FIEK) në Universitetin e Prishtinës(Hasan Prishtina).
 * Të dhënat e zhvilluesve:
 <br>Elvir Misini:<br><img alt="GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> https://github.com/elvirmisini
